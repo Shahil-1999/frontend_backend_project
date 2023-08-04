@@ -1,0 +1,106 @@
+.blogpost-img {
+    height: 85vh;
+    overflow: hidden;
+
+}
+
+.blogpost-img img {
+    height: 85vh;
+    width: 100vw;
+
+
+}
+
+.blog-content {
+    background: linear-gradient(to top right, rgb(252, 218, 218), rgb(205, 234, 214));
+    padding-top: 5%;
+    padding-bottom: 2%;
+
+}
+
+.blogpost-content h1 {
+    padding: 1%;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 7%;
+    border: 2px solid black;
+    border-radius: 11px;
+    background-color: rgb(219, 217, 214);
+
+}
+
+.blogs-content>span {
+    color: var(--color);
+    font-size: x-large;
+
+}
+
+.blogs-content img {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.blogs-content p {
+    text-align: justify;
+    font-family: var(--font1);
+    line-height: 31px;
+}
+
+
+.second-blog-content,
+.third-blog-content,
+.fourth-blog-content,
+.para {
+    display: none;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.social-author>span {
+    font-weight: 500;
+    font-size: large;
+    width: 50%;
+}
+
+.social-icon svg:hover {
+
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.blog-content-hr {
+    margin: 0;
+}
+
+
+.blogpost-content h1 {
+
+    animation-name: blogpost;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  
+}
+
+@keyframes blogpost {
+    33% {
+        color: violet;
+    }
+
+    66% {
+        color: chartreuse;
+    }
+
+    100% {
+        color: crimson;
+    }
+
+
+}

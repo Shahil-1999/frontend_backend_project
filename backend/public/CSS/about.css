@@ -1,0 +1,143 @@
+
+
+.post-details::before {
+    content: "";
+    position: absolute;
+    background: url('https://mllj2j8xvfl0.i.optimole.com/cb:3970~373ad/w:auto/h:auto/q:mauto/https://themeisle.com/wp-content/themes/themeisle/assets/img/bg-new.svg') no-repeat center center/cover;
+    height: 49vh;
+    width: 100%;
+
+    z-index: -1;
+
+
+}
+
+.post-details-txt h1 {
+    font-weight: 800;
+    font-size: 65px;
+    padding-bottom: 3%;
+    font-family: var(--font1);
+
+}
+
+.post-details-txt {
+
+
+    width: 50%;
+    color: white;
+    text-align: center;
+    padding-top: 6%;
+
+}
+
+.post-details-txt span {
+    font-size: 22px;
+    font-family: var(--font3);
+    font-weight: 400;
+}
+
+.post-card-container {
+    margin: 6% auto 2% auto;
+    /* background-color: red; */
+}
+
+.upper-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.upper-left-card {
+    width: 55%;
+    text-align: justify;
+    line-height: 31px;
+    font-size: large;
+    font-family: var(--font5);
+    padding: 3%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 7px 4px 10px #dad8d4, -4px -4px 10px #e0dac9;
+}
+
+.upper-left-card p {
+    margin: 3% 0;
+}
+
+.upper-left-card img {
+    width: 100%;
+}
+
+.upper-right-card {
+
+
+    width: 43%;
+    text-align: justify;
+    line-height: 31px;
+    font-family: var(--font5);
+    font-size: large;
+
+}
+
+.upper-right-top {
+    text-align: justify;
+    padding: 2%;
+    background-color: var(--card-background-color1);
+    box-shadow: 7px 4px 10px #e6d29b, -4px -4px 10px #e6d29b;
+    border-radius: 5px;
+}
+
+.upper-right-bottom {
+    background-color: white;
+    font-family: var(--font5);
+    border-radius: 5px;
+}
+
+.upper-right-top,
+.upper-right-bottom {
+    text-align: justify;
+    line-height: 31px;
+    font-size: large;
+    padding: 7% 3%;
+    box-shadow: 7px 4px 10px #dad8d4, -4px -4px 10px #e0dac9;
+}
+
+.upper-right-top {
+    margin-bottom: 3%;
+}
+
+.upper-right-top p,
+.upper-right-bottom p {
+    margin: 6% 0;
+
+}
+
+.lower-about {
+
+    width: 100%;
+    font-family: var(--font5);
+
+
+
+}
+
+.lower-about::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to top right, rgba(252, 218, 218, 0.5), rgba(205, 234, 214, 0.5)), url('/img/581.jpg') no-repeat center center/cover;
+    height: 97%;
+    width: inherit;
+    z-index: -1;
+
+}
+
+.lower-about-text {
+    margin: auto !important;
+    text-align: justify;
+    padding: 3% 0;
+}
+
+.lower-about-text ul li {
+    padding: 1%;
+    font-size: larger;
+}

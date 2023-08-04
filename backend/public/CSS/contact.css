@@ -1,0 +1,78 @@
+.contact::before {
+    content: "";
+    position: fixed;
+    height: 805px;
+    width: 100vw;
+    background: url('/img/contact\ us.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.contact h2 {
+    margin-top: 3%;
+}
+
+
+.contact-container {
+    display: flex;
+
+}
+
+.main-contact {
+
+    width: 50%;
+
+}
+
+
+
+.contact h2 {
+    margin-top: 2% !important;
+}
+
+.form-input {
+    padding: 1%;
+
+}
+
+.form-input input,
+.form-input textarea {
+    width: 100%;
+    padding: 2%;
+    border-radius: 7px;
+    border: 1px solid black;
+    background: none;
+    font-family: var(--font4);
+}
+
+.btn-contact {
+
+    width: 94px;
+    margin-left: 0px;
+}
+
+.map {
+
+    width: 50%;
+
+}
+
+.map iframe {
+
+    border-radius: 27px;
+    width: 100%;
+
+}
+
+
+.result {
+
+    display: block;
+    border: 2px solid black;
+    padding: 3%;
+    background-color: #c4c9d3;
+    border-radius: 10px;
+    font-family: var(--font1);
+    position: absolute;
+    left: 10%;
+}

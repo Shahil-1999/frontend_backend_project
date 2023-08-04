@@ -1,0 +1,230 @@
+.content {
+    height: 366px;
+    display: flex;
+    margin-top: 1%;
+
+    /* background-color: rgb(42, 165, 73); */
+}
+
+
+
+.content::before {
+    content: "";
+    position: absolute;
+    background: url("/img/vecteezy_businessman-designing-a-website-by-coding-on-a-desktop_5611079.jpg") no-repeat center center/cover;
+    height: inherit;
+    width: 60%;
+    opacity: 0.2;
+    z-index: -1;
+
+}
+
+.content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--font1);
+}
+
+.content-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+
+}
+
+.content-right img {
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px var(--main-bg-color);
+    transition: all 1s ease-in-out;
+
+
+}
+
+.content-right img:hover {
+    cursor: pointer;
+}
+
+.content-left h3 {
+    padding-bottom: 6%;
+
+}
+
+.articles {
+    /* background-color: lightcoral; */
+    padding-top: 1%;
+}
+
+.article {
+    display: flex;
+    margin: 2%;
+}
+
+.article-img img {
+    box-shadow: 7px 4px 10px grey, -4px -4px 10px grey;
+    border-radius: 5px;
+    margin-top: 11%;
+    width: 200px;
+    transition: all 0.6s ease-in-out;
+}
+
+.article-img img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.article-content {
+
+    padding: 3% 0%;
+    margin-left: 5%;
+
+}
+
+.article-content a {
+    text-decoration: none;
+    font-family: var(--font3);
+}
+
+.author {
+    padding: 3% 0%;
+    font-weight: 700;
+}
+
+.author img {
+    width: 23px;
+    border-radius: 50px;
+    margin-right: 3%;
+}
+.fade_up{
+    display: flex;
+}
+
+.main-article {
+    display: flex;
+}
+
+.right-article {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-article img {
+    height: 50vh;
+    width: 35vw;
+    padding-left: 3%;
+    border-radius: 50px;
+
+}
+
+#right-article-2,
+#right-article-3 {
+    display: none;
+}
+
+.mf {
+    cursor: pointer;
+}
+
+
+.footer {
+
+
+    background-color: #1d2b34;
+    margin-top: 3%;
+
+}
+
+.main-footer {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.footer-list-items {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.upper-footer-content {
+    display: flex;
+
+}
+
+.upper-footer-content h3 {
+    font-weight: 500;
+    color: white;
+    padding-bottom: 11%;
+}
+
+.upper-footer-content ul {
+
+    list-style: none;
+}
+
+.upper-footer-content ul li a,
+.lower-footer-content ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+
+}
+
+.lower-footer {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.lower-footer-content {
+    width: 50%;
+}
+
+.lower-footer-content ul {
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+
+}
+
+.lower-footer-content ul span,
+.footer-line {
+    color: rgb(133, 129, 129);
+
+}
+
+.footer-line {
+    padding: 27px 0;
+
+}
+
+.footer-logo {
+    width: 40%;
+    display: flex;
+    padding-right: 2rem;
+    align-items: end;
+    flex-direction: column;
+}
+
+.footer-logo p {
+    color: white;
+    margin-top: 6%;
+    cursor: pointer;
+}
+
+.footer-logo img {
+    width: 63px;
+    border-radius: 7px;
+
+}
+
+.source {
+    color: white;
+    padding-right: 2rem;
+}
