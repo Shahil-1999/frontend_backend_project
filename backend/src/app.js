@@ -136,10 +136,16 @@ app.get("/login", (req, res) => {
 app.post("/contact", async (req, res) => {
     try {
 
+        if(!(req.body.name && req.body.email && req.body.number && req.body.message)){
+            return res.status(400).send("<h1>Fields Should Not be Empty</h1>")
+        }else{
+
 
         const userData = new User(req.body)//now i'm requesting to the server that give me that page
         await userData.save();// Now we are going to save our data into the database
         res.status(200).render("contact");  //, {sucess:'Sucessfull submitted'}
+
+        }
 
     } catch (error) {
         res.status(500).send(error);

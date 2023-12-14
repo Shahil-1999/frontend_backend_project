@@ -154,12 +154,22 @@
     max-width: 400px;
   }
 
-  .log_reg .container9 .imgBx {
-    display: none;
+ 
+  .login_img{
+    width: 100% !important;
   }
 
   .log_reg .container9 .user .formBx {
     width: 100%;
+  }
+   .container9.active{
+    height: 900px !important;
+  }
+  .sign_img{
+    width: 100% !important;
+  }
+  .signupBx{
+    flex-direction: column-reverse;
   }
 }
 

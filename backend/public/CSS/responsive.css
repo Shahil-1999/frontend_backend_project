@@ -4,11 +4,16 @@
     }
 
     .main-article,
-    .left-article {
+    .left-article, .article_c {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
+    /* .article_c{
+        display: flex;
+        flex-direction: column;
+    } */
 
     .article {
         display: flex;
@@ -22,11 +27,24 @@
         text-align: center;
 
     }
+    .content::before {
+      
+        width: 100%;
+       
+    
+    }
+    .user{
+        display: flex;
+        flex-direction: column;
+    }
 
 
     .right-article img {
         width: 55vw;
         height: 26vh;
+    }
+    .right-article{
+        height: 50vh;
     }
 
     .contact-container {
