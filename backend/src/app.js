@@ -50,19 +50,19 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
     try {
-        if(!req.cookies.jwt){
+        if (!req.cookies.jwt) {
             res.status(400).render("login_registration")
-        }else{
+        } else {
             const isValidUser = verifymiddleware(req.cookies.jwt);
-            if(isValidUser){
+            if (isValidUser) {
                 res.status(200).render("about");
-            }else{
+            } else {
                 res.status(400).render("login_registration")
             }
         }
-        
+
     } catch (error) {
-        res.send(error)      
+        res.send(error)
     }
 
 });
@@ -70,19 +70,19 @@ app.get("/about", (req, res) => {
 app.get("/blogs", (req, res) => {
 
     try {
-        if(!req.cookies.jwt){
+        if (!req.cookies.jwt) {
             res.status(400).render("login_registration")
-        }else{
+        } else {
             const isValidUser = verifymiddleware(req.cookies.jwt);
-            if(isValidUser){
+            if (isValidUser) {
                 res.status(200).render("blogs");
-            }else{
+            } else {
                 res.status(400).render("login_registration")
             }
         }
-        
+
     } catch (error) {
-        res.send(error)      
+        res.send(error)
     }
 
 });
@@ -90,38 +90,38 @@ app.get("/blogs", (req, res) => {
 app.get("/search", (req, res) => {
 
     try {
-        if(!req.cookies.jwt){
+        if (!req.cookies.jwt) {
             res.status(400).render("login_registration")
-        }else{
+        } else {
             const isValidUser = verifymiddleware(req.cookies.jwt);
-            if(isValidUser){
+            if (isValidUser) {
                 res.status(200).render("search");
-            }else{
+            } else {
                 res.status(400).render("login_registration")
             }
         }
-        
+
     } catch (error) {
-        res.send(error)      
+        res.send(error)
     }
 
 });
 
 app.get("/contact", (req, res) => {
     try {
-        if(!req.cookies.jwt){
+        if (!req.cookies.jwt) {
             res.status(400).render("login_registration")
-        }else{
+        } else {
             const isValidUser = verifymiddleware(req.cookies.jwt);
-            if(isValidUser){
+            if (isValidUser) {
                 res.status(200).render("contact");
-            }else{
+            } else {
                 res.status(400).render("login_registration")
             }
         }
-        
+
     } catch (error) {
-        res.send(error)      
+        res.send(error)
     }
 
 });
@@ -136,14 +136,14 @@ app.get("/login", (req, res) => {
 app.post("/contact", async (req, res) => {
     try {
 
-        if(!(req.body.name && req.body.email && req.body.number && req.body.message)){
+        if (!(req.body.name && req.body.email && req.body.number && req.body.message)) {
             return res.status(400).send("<h1>Fields Should Not be Empty</h1>")
-        }else{
+        } else {
 
 
-        const userData = new User(req.body)//now i'm requesting to the server that give me that page
-        await userData.save();// Now we are going to save our data into the database
-        res.status(200).render("contact");  //, {sucess:'Sucessfull submitted'}
+            const userData = new User(req.body)//now i'm requesting to the server that give me that page
+            await userData.save();// Now we are going to save our data into the database
+            res.status(200).render("contact");  //, {sucess:'Sucessfull submitted'}
 
         }
 
@@ -162,32 +162,23 @@ app.post("/contact", async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
 const Storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      return cb(null, './public/uploads')
+        return cb(null, './public/uploads')
     },
 
     filename: function (req, file, cb) {
         const uniqueName = Date.now()   // i m adding date.now with fil original name because if i upload same photo again then it will prevent to override.
         const originamName = file.originalname;
-        
-        
+
+
         return cb(null, uniqueName + '-' + originamName)
     }
-  })
+})
 
-  
-  
-  const upload = multer({ storage: Storage }).single('profileImage')
+
+
+const upload = multer({ storage: Storage }).single('profileImage')
 
 
 
@@ -199,7 +190,7 @@ app.post("/login_registration", upload, async (req, res) => {
         req.body.profileImage = imageLocalPath + req.file.filename
 
         if (!(req.body.name && req.body.username && req.body.email && req.body.number && req.body.password && req.body.c_password)) {
-            
+
             return res.status(400).send("<h1>Fields Should Not be Empty</h1>")
         }
         else {
@@ -213,14 +204,14 @@ app.post("/login_registration", upload, async (req, res) => {
                     req.body.c_password = bcrypt.hashSync(req.body.c_password, bcrypt.genSaltSync(10));
 
 
-                  
-                  
+
+
                     const loginData = new UserLogin(req.body)//now i'm requesting to the server that please add all the data which is entered by user.
-                   console.log('login data : ',loginData);
-                    
+                    console.log('login data : ', loginData);
 
 
-                   
+
+
 
 
 
@@ -257,14 +248,14 @@ app.post("/login", async (req, res) => {
 
 
             const findUsername = await UserLogin.findOne({ username: username }) //first for database username and second one is for user entered username.
-            if (!findUsername) {    
+            if (!findUsername) {
                 res.status(400).send("<h1>User Dose'nt Exist</h1>")
 
             } else {
                 //Checking password~
                 let hashPassword = findUsername.password;
-                if(bcrypt.compareSync(password, hashPassword)){
-                    
+                if (bcrypt.compareSync(password, hashPassword)) {
+
                     const token = await jwt.sign({
                         id: findUsername._id,
                         username: findUsername.username,
@@ -272,18 +263,18 @@ app.post("/login", async (req, res) => {
                     }, 'iFeelThatYouAreAAuthenticPerson', {
                         expiresIn: '5 minutes'
                     })
-                //    console.log('token : => ', token)
-                   res.cookie('jwt', token,{
-                    expires: new Date(Date.now() + 300000)
-                   })
-                   res.render("blogs")
-
-                                      
-                
+                    //    console.log('token : => ', token)
+                    res.cookie('jwt', token, {
+                        expires: new Date(Date.now() + 300000)
+                    })
+                    res.render("blogs")
 
 
-                
-                }else{
+
+
+
+
+                } else {
                     res.status(400).send("<h1>Invalid Credientials</h1>")
                 }
 
@@ -300,8 +291,8 @@ app.post("/login", async (req, res) => {
 
 
 //middleware
-const verifymiddleware = async (token)=>{
-    const userVerification = await jwt.verify(token,'iFeelThatYouAreAAuthenticPerson' )
+const verifymiddleware = async (token) => {
+    const userVerification = await jwt.verify(token, 'iFeelThatYouAreAAuthenticPerson')
     return userVerification
 }
 
